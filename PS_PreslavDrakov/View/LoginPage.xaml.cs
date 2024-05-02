@@ -9,4 +9,11 @@ public partial class LoginPage : ContentPage
 		InitializeComponent();
 		this.BindingContext = loginPageViewModel;
 	}
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+
+        UserNameEntry.Text = string.Empty;
+        PasswordEntry.Text = string.Empty;
+    }
 }

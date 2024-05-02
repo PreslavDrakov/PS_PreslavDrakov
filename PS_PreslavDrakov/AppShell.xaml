@@ -5,8 +5,10 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:PS_PreslavDrakov.View"
     xmlns:views="clr-namespace:PS_PreslavDrakov.View"
+    xmlns:models="clr-namespace:PS_PreslavDrakov.Model"
     Title="PS_PreslavDrakov"
-    Shell.TabBarIsVisible="True">
+    Shell.TabBarIsVisible="False">
+
 
     <ShellContent
         Title="Home"
@@ -14,10 +16,17 @@
         FlyoutItemIsVisible="False"
         Shell.FlyoutBehavior="Disabled"
         Route="LoginPage" />
-    
+
     <FlyoutItem Route="HomePage" FlyoutDisplayOptions="AsMultipleItems">
-        <ShellContent Title="Home" ContentTemplate="{DataTemplate views:HomePage}"/>
-        <ShellContent Title="Contact" ContentTemplate="{DataTemplate views:ContactPage}"/>
-        <ShellContent Title="About" ContentTemplate="{DataTemplate views:AboutPage}"/>
+        <ShellContent Title="Home" Icon="{x:Static models:Icons.Dashboard}" ContentTemplate="{DataTemplate views:HomePage}"/>
+        <ShellContent Title="Contact" Icon="{x:Static models:Icons.ContactUs}" ContentTemplate="{DataTemplate views:ContactPage}"/>
+            <ShellContent Title="About" Icon="{x:Static models:Icons.AboutUs}" ContentTemplate="{DataTemplate views:AboutPage}"/>
     </FlyoutItem>
+
+    <Shell.FlyoutFooter>
+        <StackLayout Padding="20">
+            <Button Text="Sign Out" Command="{Binding SignOutCommand}" BackgroundColor="#1D8348"/>
+        </StackLayout>
+    </Shell.FlyoutFooter>
+    
 </Shell>
