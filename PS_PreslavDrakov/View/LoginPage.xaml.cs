@@ -1,9 +1,12 @@
+using PS_PreslavDrakov.ViewModel;
+
 namespace PS_PreslavDrakov.View;
 
 public partial class LoginPage : ContentPage
 {
-	public LoginPage()
+	public LoginPage(LoginPageViewModel loginPageViewModel)
 	{
 		InitializeComponent();
+		this.BindingContext = loginPageViewModel;
 	}
 }
