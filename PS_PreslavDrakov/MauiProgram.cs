@@ -24,7 +24,10 @@ namespace PS_PreslavDrakov
             builder.Services.AddSingleton<LoginPage>();
             builder.Services.AddSingleton<ContactPage>();
             builder.Services.AddSingleton<AboutPage>();
+
             builder.Services.AddSingleton<LoginPageViewModel>();
+            builder.Services.AddSingleton<ProductPageViewModel>();
+            builder.Services.AddSingleton<AddProductPageViewModel>();
             return builder.Build();
         }
     }

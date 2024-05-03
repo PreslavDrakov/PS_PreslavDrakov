@@ -20,7 +20,8 @@
     <FlyoutItem Route="HomePage" FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent Title="Home" Icon="{x:Static models:Icons.Dashboard}" ContentTemplate="{DataTemplate views:HomePage}"/>
         <ShellContent Title="Contact" Icon="{x:Static models:Icons.ContactUs}" ContentTemplate="{DataTemplate views:ContactPage}"/>
-            <ShellContent Title="About" Icon="{x:Static models:Icons.AboutUs}" ContentTemplate="{DataTemplate views:AboutPage}"/>
+        <ShellContent Title="About" Icon="{x:Static models:Icons.AboutUs}" ContentTemplate="{DataTemplate views:AboutPage}"/>
+        <ShellContent Title="Products" Icon="{x:Static models:Icons.AboutUs}" ContentTemplate="{DataTemplate views:ProductPage}"/>
     </FlyoutItem>
 
     <Shell.FlyoutFooter>

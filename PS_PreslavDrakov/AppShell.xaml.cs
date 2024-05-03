@@ -10,6 +10,7 @@ namespace PS_PreslavDrakov
             InitializeComponent();
             this.BindingContext = new AppShellViewModel();
             Routing.RegisterRoute(nameof(HomePage), typeof(HomePage));
+            Routing.RegisterRoute(nameof(AddProductPage), typeof(AddProductPage));
         }
     }
 }

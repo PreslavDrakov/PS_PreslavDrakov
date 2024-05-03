@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PS_PreslavDrakov.View.AddProductPage"
+             xmlns:local="clr-namespace:PS_PreslavDrakov.ViewModel"
+             Title="Add Product"
+             Shell.BackgroundColor="SkyBlue"
+             Background="#E8F8F5">
+    <StackLayout Spacing="5" Padding="15" Margin="10">
+        <VerticalStackLayout IsVisible="False">
+            <Label Text="ID" FontSize="Medium" IsEnabled="False"/>
+            <Entry Text="{Binding Product.ProductId, Mode=TwoWay}" FontSize="Medium"  IsEnabled="False"/>
+            <BoxView HeightRequest="0.5" Color="Grey"/>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout>
+            <Label Text="Name" FontSize="Medium"/>
+            <Entry Text="{Binding Product.ProductName, Mode=TwoWay}" FontSize="Medium"/>
+            <BoxView HeightRequest="0.5" Color="Grey"/>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout>
+            <Label Text="Quantity" FontSize="Medium"/>
+            <Entry Text="{Binding Product.ProdQty, Mode=TwoWay}" FontSize="Medium"/>
+            <BoxView HeightRequest="0.5" Color="Grey"/>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout>
+            <Label Text="Price" FontSize="Medium"/>
+            <Entry Text="{Binding Product.ProdQty, Mode=TwoWay}" FontSize="Medium"/>
+            <BoxView HeightRequest="0.5" Color="Grey"/>
+        </VerticalStackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Save" Command="{Binding SaveProductCommand}" HorizontalOptions="FillAndExpand"/>
+            <Button Text="Cancel" BackgroundColor="#DF5252"  Command="{Binding OnCancelCommand}" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
