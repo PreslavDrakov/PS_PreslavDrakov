@@ -11,8 +11,9 @@ namespace PS_PreslavDrakov
         {
             get
             {
-                if(_productService == null)
+                if (_productService == null)
                 {
+
                     _productService = new ProductService(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "ProductDB.db3"));
                 }
                 return _productService;

@@ -11,4 +11,13 @@ public partial class AddProductPage : ContentPage
 		InitializeComponent();
 		this.BindingContext = new AddProductPageViewModel();
 	}
+    public AddProductPage(Product productInfo)
+    {
+        InitializeComponent();
+        this.BindingContext = new AddProductPageViewModel();
+		if(productInfo != null )
+		{
+			((AddProductPageViewModel)BindingContext).Product = productInfo;
+		}
+    }
 }

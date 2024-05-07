@@ -16,5 +16,9 @@ namespace PS_PreslavDrakov.Model
 
         public const string People = "group.png";
 
+        public const string Products = "packaging.png";
+
+        public const string Edit = "pen.png";
+
     }
 }

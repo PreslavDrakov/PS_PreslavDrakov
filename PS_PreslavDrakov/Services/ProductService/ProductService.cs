@@ -13,7 +13,7 @@ namespace PS_PreslavDrakov.Services.ProductService
         }
         public async Task<bool> AddUpdateProductAsync(Product product)
         {
-            if (product.ProductId > 0)
+            if (product.ProdId > 0)
             {
                 await _database.UpdateAsync(product);
             }
@@ -32,7 +32,7 @@ namespace PS_PreslavDrakov.Services.ProductService
 
         public async Task<Product> GetProductAsync(int prodId)
         {
-            return await _database.Table<Product>().Where(p => p.ProductId == prodId).FirstOrDefaultAsync();
+            return await _database.Table<Product>().Where(p => p.ProdId == prodId).FirstOrDefaultAsync();
         }
 
         public async Task<IEnumerable<Product>> GetProductsAsync()

@@ -9,7 +9,13 @@ public partial class ProductPage : ContentPage
 	public ProductPage()
 	{
 		InitializeComponent();
-		this.BindingContext=productPageViewModel=new ProductPageViewModel();
+		this.BindingContext=productPageViewModel=new ProductPageViewModel(Navigation);
 	}
-	
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+		productPageViewModel.OnAppearing();
+    }
+
 }

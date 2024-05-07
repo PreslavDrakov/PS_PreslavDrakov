@@ -13,5 +13,7 @@ namespace PS_PreslavDrakov.ViewModel
         [ObservableProperty]
         private Product _product;
 
+        public INavigation Navigation { get; set; }
+
     }
 }

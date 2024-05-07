@@ -3,11 +3,58 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PS_PreslavDrakov.View.ProductPage"
              Title="Products"
+             xmlns:models="clr-namespace:PS_PreslavDrakov.Model"
+             xmlns:local="clr-namespace:PS_PreslavDrakov.ViewModel"
              Shell.BackgroundColor="SkyBlue">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Command="{Binding OnAddProductCommand}"/>
     </ContentPage.ToolbarItems>
-    <VerticalStackLayout>
-        
-    </VerticalStackLayout>
+    <StackLayout>
+        <RefreshView x:DataType="local:ProductPageViewModel"
+                     Command="{Binding LoadProductCommand}"
+                     IsRefreshing="{Binding IsBusy}">
+            <CollectionView ItemsSource="{Binding productList}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Product">
+                        <StackLayout Padding="2">
+                            <SwipeView>
+                                <SwipeView.RightItems>
+                                    <SwipeItems>
+                                        <SwipeItem Text="Delete" Command="{Binding Source={RelativeSource AncestorType={x:Type local:ProductPageViewModel}}, 
+                                            Path=ProductTappedDeleteCommand}" CommandParameter="{Binding .}" BackgroundColor="#DF5252"/>
+                                        <SwipeItem IsDestructive="True" Text="Close" BackgroundColor="Green"/>
+
+
+                                    </SwipeItems>
+                                </SwipeView.RightItems>
+                                <Grid Padding="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="140"/>
+                                        <ColumnDefinition Width="80"/>
+                                        <ColumnDefinition Width="80"/>
+                                        <ColumnDefinition Width="70"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Text="{Binding ProdName}" FontAttributes="Bold" FontSize="Large"/>
+                                    <Label Grid.Column="1" Text="{Binding ProdQty}"  FontSize="Large"/>
+                                    <Label Grid.Column="2" Text="{Binding ProdPrice}" FontSize="Large"/>
+
+                                    <Image Source="pen.png" Grid.Column="3" WidthRequest="30" HeightRequest="30" HorizontalOptions="End">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Source={RelativeSource AncestorType={x:Type local:ProductPageViewModel}},
+                                                Path=ProductTappedEditCommand}" CommandParameter="{Binding .}">
+                                            </TapGestureRecognizer>
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </Grid>
+                            </SwipeView>
+                            
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
+    </StackLayout>
 </ContentPage>
