@@ -1,1 +1,1 @@
-This is project with .NET Maui. The project consists a login, home, about, contact and product pages. The login is implemented using APIs. The product page is used to make CRUD operations on SQLite database.
+This is Android project with .NET Maui. The project consists a login, home, about, contact and product pages. The login is implemented using APIs. The product page is used to make CRUD operations on SQLite database.
