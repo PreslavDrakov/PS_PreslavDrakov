@@ -18,7 +18,7 @@ namespace PS_PreslavDrakov.Services
                 {
                     var userInfo = new UserInfo();
                     var client = new HttpClient();
-                    string url = "http://192.168.61.40:8099/api/UserInfoes/LoginUser/" + username + "/" + password;
+                    string url = "http://192.168.62.1:8099/api/UserInfoes/LoginUser/" + username + "/" + password;
                     client.BaseAddress = new Uri(url);
                     HttpResponseMessage response = await client.GetAsync("");
                     if (response.IsSuccessStatusCode)
