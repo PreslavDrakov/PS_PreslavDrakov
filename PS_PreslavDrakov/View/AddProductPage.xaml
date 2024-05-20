@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PS_PreslavDrakov.View.AddProductPage"
              xmlns:local="clr-namespace:PS_PreslavDrakov.ViewModel"
-             Title="Add Product"
+             Title="Product"
              Shell.BackgroundColor="SkyBlue"
              Background="#E8F8F5">
     <StackLayout Spacing="5" Padding="15" Margin="10">
