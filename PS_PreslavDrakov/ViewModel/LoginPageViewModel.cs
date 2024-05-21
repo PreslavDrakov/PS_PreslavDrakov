@@ -26,7 +26,7 @@ namespace PS_PreslavDrakov.ViewModel
         [ICommand]
         public async void Login()
         {
-            /*if(!string.IsNullOrWhiteSpace(UserName) && !string.IsNullOrWhiteSpace(Password))
+            if(!string.IsNullOrWhiteSpace(UserName) && !string.IsNullOrWhiteSpace(Password))
             {
                 UserInfo userInfo = await loginRepository.Login(UserName, Password);
                 if (Preferences.ContainsKey(nameof(App.UserInfo)))
@@ -37,7 +37,7 @@ namespace PS_PreslavDrakov.ViewModel
                 Preferences.Set(nameof(App.UserInfo), userDetails);
                 App.UserInfo=userInfo;
                 
-            }*/
+            }
             await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
         }
     }
